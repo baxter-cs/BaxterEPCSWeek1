@@ -1,0 +1,14 @@
+
+ON DECK:
+[ ] Fork repository to your own account
+[ ] Make the script function for specified options
+
+BACKLOG:
+[ ] Add ability to caculate daily caloric intake for students
+[ ] Add ability to generate random students with realistic statistics
+[ ] Sketch wireframe for web interface
+[ ] Persist student data between executions
+
+AD/EX:
+[ ] Refactor input to use MVC pattern
+[ ] Factor base class Person out of Student
