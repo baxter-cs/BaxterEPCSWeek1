@@ -57,10 +57,10 @@ def printStudentsByAge(students):
   for student in students:
     print student.lastName + ", " + student.firstName + ", " + str(student.age)
 
-def printStudentsLName(students):
+def printStudentsByLName(students):
   print ("----Students By -----")
 
-def printStudentsFName(students):
+def printStudentsByFName(students):
   print ("----Students By -----")
 
 def printSumAge(students):
@@ -70,7 +70,7 @@ def printAvgAge(students):
   print ("Answer:")
 
 def ageRange(studentA, studentB):
-  pass
+  return math.abs(studentA.age - studentB.age)
 
 
 main()
