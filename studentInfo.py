@@ -6,12 +6,21 @@ def main():
 
   printHeader()
   selection = getUserSelection()
+  if selection == 0:
+    printStudentsByAge(students)
+  elif selection == 1:
+    pass
+  elif selection == 2:
+    pass
+  else:
+    print "SELECTION NOT RECOGNIZED"
+
 
 class Student:
   def __init__(self, lastName, age):
     self.lastName = lastName
     self.age = age
-    self.firstName = "NONE SPECIFIED"
+    self.firstName = "JOHN"
 
   def assignRandomName(self):
     pass
@@ -34,28 +43,30 @@ inputQuestions = [
 ]
 
 def getUserSelection():
-  print inputQuestions[0]
-  print inputQuestions[1]
-  print inputQuestions[2]
+  print (inputQuestions[0])
+  print (inputQuestions[1])
+  print (inputQuestions[2])
   return input("Type selection and press enter:")
-
 
 def printHeader():
     print("HEADER TEXT HERE")
 
-def printStudentsByAge():
-  print "----Students By Age-----"
+def printStudentsByAge(students):
+  print ("----Students By Age-----")
+  sortStudents = sorted(students, key=lambda student: student.age)
+  for student in students:
+    print student.lastName + ", " + student.firstName + ", " + str(student.age)
 
-def printStudentsLName():
-  print "----Students By -----"
+def printStudentsLName(students):
+  print ("----Students By -----")
 
-def printStudentsFName():
-  print "----Students By -----"
+def printStudentsFName(students):
+  print ("----Students By -----")
 
-def printSumAge():
+def printSumAge(students):
   print "Answer:"
 
-def printAvgAge():
+def printAvgAge(students):
   print "Answer:"
 
 def ageRange(studentA, studentB):
