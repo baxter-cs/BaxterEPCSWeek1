@@ -64,10 +64,10 @@ def printStudentsFName(students):
   print ("----Students By -----")
 
 def printSumAge(students):
-  print "Answer:"
+  print ("Answer:")
 
 def printAvgAge(students):
-  print "Answer:"
+  print ("Answer:")
 
 def ageRange(studentA, studentB):
   pass
