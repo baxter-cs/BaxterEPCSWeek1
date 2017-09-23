@@ -26,7 +26,7 @@ class Student:
     pass
 
   def assignRandomAge(self):
-    pass
+    self.age = random.randint(0,100)
 
   def assignRandomWeight(self, isMetric):
     pass
