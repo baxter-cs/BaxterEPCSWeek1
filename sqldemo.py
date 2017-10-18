@@ -11,12 +11,12 @@ def main():
   conn = engine.connect()
   metadata = MetaData()
   createTables(metadata, conn)
-  statement = text("INSERT INTO users (name, fullname, age)"
-  " values ('hal','Halsted Matthew Larsson', 37)")
+  statement = text("INSERT INTO users (id, name, fullname, age)"
+  " values (1, 'hal','Halsted Matthew Larsson', 37)")
   conn.execute(statement)
 
-  statement = text("INSERT INTO users (name, fullname, age)"
-  " values ('Kasey','Kasey Gabloff', 17)")
+  statement = text("INSERT INTO users (id, name, fullname, age)"
+  " values (2, 'Emma','Emma Doovid Judith Harringtowne', " + str(random.randint(10,16)) + ")")
   conn.execute(statement)
 
   statement = text("INSERT INTO pets (name, age, userid)"
@@ -24,22 +24,14 @@ def main():
   conn.execute(statement)
 
   statement = text("INSERT INTO pets (name, age, userid)"
-  " values ('Fiona', 16, 1)")
+  " values ('Bobbi', 24, 2)")
   conn.execute(statement)
 
   statement = text("INSERT INTO pets (name, age, userid)"
-  " values ('Andy', 12, 1)")
+  " values ('Bubbles', 14, 2)")
   conn.execute(statement)
 
-  statement = text("INSERT INTO pets (name, age, userid)"
-  " values ('Marigold', 6, 2)")
-  conn.execute(statement)
-
-  statement = text("INSERT INTO pets (name, age, userid)"
-  " values ('Evie', 9, 2)")
-  conn.execute(statement)
-
-  query = text("Select pets.name, users.name from pets JOIN users ON pets.userID = users.ID ")
+  query = text("SELECT users.name, pets.name from pets JOIN users ON pets.userid = users.id")
   result = conn.execute(query).fetchall()
   print(result)
 
