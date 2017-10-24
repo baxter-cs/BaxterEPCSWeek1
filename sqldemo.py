@@ -5,7 +5,7 @@ from sqlalchemy.sql import text
 
 
 
-engine = create_engine('sqlite:///:memory:', echo=True)
+engine = create_engine('sqlite:///mydb.db', echo=True)
 
 def main():
   conn = engine.connect()
@@ -31,7 +31,7 @@ def main():
   " values ('Bubbles', 14, 2)")
   conn.execute(statement)
 
-  query = text("SELECT users.name, pets.name from pets JOIN users ON pets.userid = users.id")
+  query = text("SELECT * from pets WHERE pets.userid = 2")
   result = conn.execute(query).fetchall()
   print(result)
 
